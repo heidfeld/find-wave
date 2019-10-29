@@ -5,10 +5,14 @@ import './less/Button.css';
 
 const Button = (props) => {
 
-    const {onClick, text} = props;
+    const {onClick, text, width, height, backgroundColor} = props;
 
     return (
-        <button className='Button' onClick={onClick}>
+        <button
+            style={{width: width, height: height, backgroundColor: backgroundColor}}
+            className='Button'
+            onClick={onClick}
+        >
             {text}
         </button>
     )

@@ -33,6 +33,9 @@ class App extends Component {
                 <div className="App-container">
                     <WaveIndicator/>
                     <Button
+                        width={200}
+                        height={30}
+                        backgroundColor={'red'}
                         text={t('searchWave')}
                     />
                 </div>
