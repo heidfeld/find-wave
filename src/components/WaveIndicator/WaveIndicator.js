@@ -10,7 +10,7 @@ const WaveIndicator = (props) => {
     return (
         <div>
             <div>
-                {`Result: ${bestResult}`}
+                {`Result: ${bestResult.toFixed(1)}`}
             </div>
             <div>
                 {`Another results: ${anotherResults}`}
