@@ -29,13 +29,12 @@ const FindWave = (props) => {
             <LanguageSwitcher onClick={handleLanguage}/>
             <div className="FindWave-header">
                 <img src={logo} className="FindWave-logo" alt="logo"/>
-                <h2>Find Wave</h2>
-            </div>
-            <div className="FindWave-container">
                 <WaveIndicator
                     bestResult={result}
                     anotherResults={altResults}
                 />
+            </div>
+            <div className="FindWave-container">
                 <Button
                     width={200}
                     height={40}
