@@ -6,6 +6,7 @@ import logo from "../../logo.svg";
 import LanguageSwitcher from "../LanguageSwitcher/LanguageSwitcher";
 import WaveIndicator from "../WaveIndicator/WaveIndicator";
 import Button from "../Button/Button";
+import {provincesWave} from "./logic/FindWaveLogic"
 
 const FindWave = (props) => {
 
