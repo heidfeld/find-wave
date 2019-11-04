@@ -10,8 +10,7 @@ import {provincesWave} from "./logic/FindWaveLogic"
 
 const FindWave = (props) => {
 
-    const [result, setResult] = useState(99.7);
-    const [altResults, setAltResults] = useState([]);
+    const [result, setResult] = useState(null);
 
     const {i18n, t} = props;
 
@@ -22,7 +21,8 @@ const FindWave = (props) => {
     };
 
     const handleResult = () => {
-        setResult(result + 0.1);
+        const waveResult = provincesWave(['SLK', 'MLP']);
+        setResult(waveResult);
     };
 
     return (
@@ -31,8 +31,7 @@ const FindWave = (props) => {
             <div className="FindWave-header">
                 <img src={logo} className="FindWave-logo" alt="logo"/>
                 <WaveIndicator
-                    bestResult={result}
-                    anotherResults={altResults}
+                    result={result}
                 />
             </div>
             <div className="FindWave-container">

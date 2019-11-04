@@ -9,6 +9,15 @@ const cacheAdd = (cache, key, obj) => {
     return cache;
 };
 
+const getStations = () => {
+    return Array.isArray(stations) ? stations : [];
+};
+
+const getStationsByProvinces = (provinces) => {
+    return getStations().filter(({province: stationProvince}) =>
+        provinces.find(province => province === stationProvince));
+};
+
 export const provincesWave = (provinces) => {
     const stationsByProvinces = getStationsByProvinces(provinces);
     const stationsSet = {};
@@ -16,41 +25,29 @@ export const provincesWave = (provinces) => {
         const {frequency} = station;
         cacheAdd(stationsSet, frequency, station);
     });
-    const sortedFrequencies = stationsSet.keys().sort((a, b) => a - b);
-    sortedFrequencies.splice(0, 0,87.5);
-    sortedFrequencies.push(108.0);
-    sortedFrequencies.reduce((acc, curr, idx, arr) => {
+    const sortedFrequencies = Object.keys(stationsSet).sort((a, b) => a - b);
+    sortedFrequencies.splice(0, 0,'87.5');
+    sortedFrequencies.push('108.0');
+    return sortedFrequencies.reduce((acc, curr, idx, arr) => {
         const prev = arr[idx - 1];
-        if (prev) {
-            const diff = curr - prev;
-            //TODO: impl
-            if (diff > 0) {
-                return cacheAdd({...acc}, diff, {start: prev, end: curr});
+        const currFreq = Math.round(parseFloat(curr) * 10) / 10;
+        const prevFreq = Math.round(parseFloat(prev) * 10) / 10;
+        if (prevFreq) {
+            const diff = (Math.round((currFreq - prevFreq) * 10) / 10);
+            if (diff > 0.15) {
+                const prevStations = stationsSet[prev];
+                const currStations = stationsSet[curr];
+                return cacheAdd({...acc}, diff, {
+                    start: prevFreq,
+                    end: currFreq,
+                    startStations: prevStations,
+                    endStations: currStations
+                });
             }
             return acc;
         } else {
             return acc;
         }
     }, {});
-
-};
-
-const getStations = () => {
-    return Array.isArray(stations) ? stations : [];
-};
-
-const range = (start, end, step = 1) => {
-    const length = Math.floor(Math.abs((end - start) / step)) + 1;
-    return Array.from(Array(length), (x, index) => start + index * step);
-
-};
-
-const getFrequenciesFM = () => {
-    return range(87.5, 108.0, 0.1);
-};
-
-const getStationsByProvinces = (provinces) => {
-    return getStations().filter(({province: stationProvince}) =>
-        provinces.find(province => province === stationProvince));
 };
 
