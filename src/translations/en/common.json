@@ -1,0 +1,24 @@
+{
+  "footer": "znajdz-fale.pl / 2019 / all rights reserved",
+  "searchWave": "Search Wave",
+  "noResult": "No Result :(",
+  "filterByProvince": "Select Province",
+  "provinces" : {
+    "SLK": "Śląskie",
+    "LBL": "Lubelskie",
+    "MLP": "Małopolskie",
+    "MZW": "Mazowieckie",
+    "PDK": "Podkarpackie",
+    "PMR": "Pomorskie",
+    "SWK": "Świętokrzyskie",
+    "WLP": "Wielkopolskie",
+    "DNS": "Dolnośląskie",
+    "ZPM": "Zachodnio-Pomorskie",
+    "PDL": "Podlaskie",
+    "LBS": "Lubuskie",
+    "LDZ": "Łódzkie",
+    "OPL": "Opolskie",
+    "WRM": "Warmińsko-Mazurskie",
+    "KJP": "Kujawsko-Pomorskie"
+  }
+}

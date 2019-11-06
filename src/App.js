@@ -1,21 +1,19 @@
-import React, { Component } from 'react';
-import logo from './logo.svg';
+import React, {Component} from 'react';
+import { withTranslation } from 'react-i18next';
+
 import './App.css';
+import FindWave from "./components/FindWave/FindWave";
 
 class App extends Component {
-  render() {
-    return (
-      <div className="App">
-        <div className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h2>Find Wave</h2>
-        </div>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
-      </div>
-    );
-  }
+
+    render() {
+        return (
+            <div className="App">
+                <FindWave {...this.props}/>
+            </div>
+        );
+    }
+
 }
 
-export default App;
+export default withTranslation('common')(App);
