@@ -13,6 +13,21 @@
     color: white;
 }
 
+.FindWave-footer {
+    font-size: 10px;
+    text-align: center;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
+.Filter-dropdown {
+    width: 400px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 20px;
+}
+
 @keyframes FindWave-logo-spin {
     from { transform: rotate(0deg); }
     to { transform: rotate(360deg); }

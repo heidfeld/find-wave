@@ -10,7 +10,8 @@
     "react-scripts": "0.9.x",
     "prop-types": "^15.7.2",
     "i18next": "^18.0.1",
-    "react-i18next": "^11.0.0"
+    "react-i18next": "^11.0.0",
+    "react-widgets": "^4.4.11"
   },
   "devDependencies": {},
   "scripts": {

@@ -13,6 +13,11 @@ const getStations = () => {
     return Array.isArray(stations) ? stations : [];
 };
 
+export const getAllProvinces = () => {
+    const provinces = getStations().map(({province}) => province);
+    return [...new Set(provinces)].sort();
+};
+
 const getStationsByProvinces = (provinces) => {
     return getStations().filter(({province: stationProvince}) =>
         provinces.find(province => province === stationProvince));
