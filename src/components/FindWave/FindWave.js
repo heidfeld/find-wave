@@ -4,7 +4,6 @@ import {Multiselect} from 'react-widgets';
 import 'react-widgets/dist/css/react-widgets.css';
 
 import './less/FindWave.css'
-import logo from "../../logo.svg";
 import LanguageSwitcher from "../LanguageSwitcher/LanguageSwitcher";
 import WaveIndicator from "../WaveIndicator/WaveIndicator";
 import {provincesWave, getAllProvinces} from "./logic/FindWaveLogic"
@@ -40,7 +39,6 @@ const FindWave = (props) => {
         <div className="FindWave">
             <LanguageSwitcher onClick={handleLanguage}/>
             <div className="FindWave-header">
-                <img src={logo} className="FindWave-logo" alt="logo"/>
                 <WaveIndicator
                     result={result}
                     t={t}

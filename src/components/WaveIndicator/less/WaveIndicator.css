@@ -1,3 +1,61 @@
 .WaveIndicator-result {
     font-size: 3em;
 }
+
+.WaveIndicator-centerResult {
+    position: relative;
+    display: inline-block;
+    padding: 20px;
+    font-size: 40px;
+    font-weight: bold;
+    border-radius: 50%;
+    border-width: 20px;
+    border-style: solid;
+    border-color: darkslategray;
+    color: white;
+    width: 200px;
+    height: 200px;
+    line-height: 200px;
+    background-color: #0074D9;
+    z-index: 1;
+}
+
+.WaveIndicator-boundaryStation {
+    position: relative;
+    display: inline-block;
+    padding: 10px;
+    font-size: 20px;
+    border-radius: 50%;
+    border-width: 10px;
+    border-style: solid;
+    border-color: lightslategray;
+    color: #333333;
+    width: 100px;
+    height: 100px;
+    line-height: 100px;
+    background-color: #F7CAC9;
+    z-index: 0;
+}
+
+.WaveIndicator-leftStation {
+    margin-right: -20px;
+}
+
+.WaveIndicator-rightStation {
+    margin-left: -20px;
+}
+
+.WaveIndicator-frequency {
+    font-size: 20px;
+    height: 20px;
+}
+
+.WaveIndicator-program {
+    font-size: 10px;
+    height: 10px;
+}
+
+.WaveIndicator-province {
+    font-size: 10px;
+    height: 10px;
+}
